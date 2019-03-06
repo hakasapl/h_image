@@ -96,10 +96,10 @@ class h_image {
                 $this->image = imagejpeg($this->image, $imgPath, $quality);  // SAVE JPEG IMAGE
                 break;
             case "png":
-                $this->image = imagepng($this->image, $imgPath, intval($quality * 0.09));  // SAVE PNG IMAGE
+                $this->image = imagepng($this->image, $imgPath);  // SAVE PNG IMAGE
                 break;
             case "bmp":
-                $this->image = imagebmp($this->image, $imgPath, boolval(intval($quality * 0.01)));  // SAVE BMP IMAGE
+                $this->image = imagebmp($this->image, $imgPath);  // SAVE BMP IMAGE
                 break;
             case "gif":
                 $this->image = imagegif($this->image, $imgPath);  // SAVE GIF IMAGE
