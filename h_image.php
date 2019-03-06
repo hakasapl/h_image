@@ -87,7 +87,7 @@ class h_image {
 
     /**
      * @param string $imgPath Destination image path
-     * @param int $quality Quality of image, 0 to 100, default = -1
+     * @param int $quality Quality of image (for JPEG images only), from -1 to 100
      */
     public function saveImage($imgPath, $quality = -1) {
         switch(pathinfo($imgPath)['extension']) {
@@ -110,13 +110,13 @@ class h_image {
     }
 
     /**
-     * @param $width
-     * @param $height
-     * @param $sWidth
-     * @param $sHeight
-     * @param $offset_x
-     * @param $offset_y
-     * @throws Exception
+     * @param int $width Width of new image
+     * @param int $height Height of new image
+     * @param int $sWidth Sampling width from original image
+     * @param int $sHeight Sampling height from original image
+     * @param int $offset_x X-Offset of source image
+     * @param int $offset_y Y-Offset of source image
+     * @throws Exception Unable to resize image
      */
     protected function resize_image($width, $height, $sWidth, $sHeight, $offset_x, $offset_y) {
         $newImage = imagecreatetruecolor($width, $height);
